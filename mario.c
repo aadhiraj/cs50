@@ -17,7 +17,7 @@ int main(void)
     {
         repeat(" ", (number - i - 1));
         repeat("#", (i+1));
-        printf(" ");
+        printf("  ");
         repeat("#", (i+1));
         printf("\n");
     }
