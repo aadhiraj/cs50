@@ -24,10 +24,10 @@ int main(void)
 }
 
 // function to repeat a set of character(s) n times
-void repeat (string c, int n)
+void repeat(string c, int n)
 {
-    for (int i = 0; i < n; i++)
+    for(int i = 0; i < n; i++)
     {
-        printf ("%s", c);
+        printf("%s", c);
     }
 }
