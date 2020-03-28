@@ -4,7 +4,7 @@
 #include <math.h>
 #include <ctype.h>
 
-int main (void)
+int main(void)
 {
     // getting user input
     string text = get_string("Text: ");
@@ -15,21 +15,21 @@ int main (void)
     int sentences = 0;
 
     // looping through each character of string
-    while(i < strlen(text))
+    while (i < strlen(text))
     {
         // test for if letter
-        if((text[i] >= 'a' && text[i] <= 'z') || (text[i] >= 'A' && text[i] <= 'Z'))
+        if ((text[i] >= 'a' && text[i] <= 'z') || (text[i] >= 'A' && text[i] <= 'Z'))
         {
             letters++;
         }
 
         // test for word end
-        else if(text[i] == ' ')
+        else if (text[i] == ' ')
         {
             words++;
         }
 
-        else if(i > 0 && (text[i] == '!' || text[i] == '?' || text[i] == '.') && isalnum(text[i - 1]))
+        else if (i > 0 && (text[i] == '!' || text[i] == '?' || text[i] == '.') && isalnum(text[i - 1]))
         {
 
             sentences++;
@@ -41,11 +41,11 @@ int main (void)
     float grade = 0.0588 * (100 * (float) letters / (float) words) - 0.296 * (100 * (float) sentences / (float) words) - 15.8;
 
 
-    if(grade >= 16)
+    if (grade >= 16)
     {
         printf("Grade 16+\n");
     }
-    else if(grade < 1)
+    else if (grade < 1)
     {
         printf("Before Grade 1\n");
     }
