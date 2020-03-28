@@ -11,7 +11,7 @@ int main (void)
 
     int i = 0;
     int letters = 0;
-    int words = 0;
+    int words = 1;
     int sentences = 0;
 
     // looping through each character of string
@@ -24,14 +24,12 @@ int main (void)
         }
 
         // test for word end
-        if(text[i] == ' ')
+        else if(text[i] == ' ')
         {
             words++;
-            letters++;
         }
 
-        // test for sentence end
-        if (i > 0 && (text[i] == '!' || text[i] == '?' || text[i] == '.') && isalnum(text[i - 1]))
+        else if(i > 0 && (text[i] == '!' || text[i] == '?' || text[i] == '.') && isalnum(text[i - 1]))
         {
 
             sentences++;
@@ -40,16 +38,19 @@ int main (void)
     }
 
     // main algorithm
-    float letters100 = (float) letters / (float) words * 100;
-    float sentences100 = (float) sentences / (float) words * 100;
-    float index = 0.0588 * letters100 - 0.296 * sentences100 - 15.8;
+    float grade = 0.0588 * (100 * (float) letters / (float) words) - 0.296 * (100 * (float) sentences / (float) words) - 15.8;
 
-    if(index >= 16)
+
+    if(grade >= 16)
     {
         printf("Grade 16+\n");
     }
+    else if(grade < 1)
+    {
+        printf("Before Grade 1\n");
+    }
     else
     {
-        printf("Grade %f\n", index);
+        printf("Grade %i\n", (int) round(grade));
     }
 }
