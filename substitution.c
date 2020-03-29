@@ -13,7 +13,7 @@ int main (int argc, string argv[])
         printf("ciphertext: ");
     for (int i = 0; i < strlen(input); i++)
     {
-        if (isalpha(input[i]))
+        if (isalpha(input[i]) || input[i] == ' ' || input[i] == ',')
         {
             if (isupper(input[i]))
             {
