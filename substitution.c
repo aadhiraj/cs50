@@ -6,16 +6,16 @@
 int main (int argc, string argv[])
 {
     string key = argv[1];
-    printf("ciphertext: ");
     if (argc != 2 || strlen(key) != 26)
     {
         printf("Usage: ./substitution key\n"); 
-        return 1;
+        return (1);
     }
     
     else
     {
         string input = get_string("plaintext: ");
+        printf("ciphertext: ");
     for (int i = 0; i < strlen(input); i++)
     {
         if (isupper(input[i]))
