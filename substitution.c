@@ -13,30 +13,23 @@ int main (int argc, string argv[])
         printf("ciphertext: ");
     for (int i = 0; i < strlen(input); i++)
     {
-        if (isalpha(input[i]) || input[i] == ' ' || input[i] == ',')
+        if (isupper(input[i]))
         {
-            if (isupper(input[i]))
-            {
-                int ascii = (int)input[i];
-                int keyas = ascii - 65;
-                char letter = key[keyas];
-                printf("%c", toupper(letter));
-            }
-            else if (islower(input[i]))
-            {
-                int ascii = (int)input[i];
-                int keyas = ascii - 97;
-                char letter = key[keyas];
-                printf("%c", tolower(letter));
-            }
-            else
-            {
-                printf("%c", input[i]);
-            }
+            int ascii = (int)input[i];
+            int keyas = ascii - 65;
+            char letter = key[keyas];
+            printf("%c", toupper(letter));
+        }
+        else if (islower(input[i]))
+        {
+            int ascii = (int)input[i];
+            int keyas = ascii - 97;
+            char letter = key[keyas];
+            printf("%c", tolower(letter));
         }
         else
         {
-            printf("Invalid input\n");
+            printf("%c", input[i]);
         }
     }
     }
