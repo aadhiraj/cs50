@@ -6,13 +6,8 @@
 int main (int argc, string argv[])
 {
     string key = argv[1];
-    if (argc != 2 || strlen(key) != 26)
-    {
-        printf("Usage: ./substitution key\n"); 
-        return (1);
-    }
     
-    else
+    if (argc == 2 && strlen(key) == 26)
     {
         string input = get_string("plaintext: ");
         printf("ciphertext: ");
@@ -37,6 +32,11 @@ int main (int argc, string argv[])
             printf("%c", input[i]);
         }
     }
+    }
+    else
+    {
+        printf("Usage: ./substitution key\n"); 
+        return (1);
     }
     printf("\n");
     }
