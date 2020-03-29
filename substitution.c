@@ -25,12 +25,16 @@ int main (int argc, string argv[])
             char letter = key[keyas];
             printf("%c", toupper(letter));
         }
-        if (islower(input[i]))
+        else if (islower(input[i]))
         {
             int ascii = (int)input[i];
             int keyas = ascii - 97;
             char letter = key[keyas];
             printf("%c", tolower(letter));
+        }
+        else
+        {
+            printf("%c", input[i]);
         }
     }
     }
