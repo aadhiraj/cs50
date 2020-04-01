@@ -136,10 +136,6 @@ bool vote(int voter, int rank, string name)
             preferences[voter][rank] = i;
             return true;
         }
-        else
-        {
-            return false;
-        }
     }
     return false;
 }
@@ -200,7 +196,9 @@ bool is_tie(int min)
     for (int i = 0; i < candidate_count; i++)
     {
         if (candidates[i].eliminated)
+        {
             continue;
+        }
         if (!(candidates[i].votes == min))
         {
             return false;
