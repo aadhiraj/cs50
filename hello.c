@@ -3,6 +3,6 @@
 
 int main(void)
 {
-    string name = get_string("Enter your name: ");
-    printf("hello, %s\n", name); // join in scratch
+    string name = get_string ("What is your name?  ");
+    printf("hello, %s\n", name);
 }
