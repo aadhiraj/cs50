@@ -1,33 +1,32 @@
 #include <cs50.h>
 #include <stdio.h>
-void repeat(string c, int n);
+
+void repeat_char (string character, int times);
 
 int main(void)
 {
-    // getting a number from user between 1 and 8 
-    int number;
+    int height;
     do
     {
-        number = get_int("Height: ");
+        height = get_int("Height: ");
     }
-    while (number > 8 || number < 1);
-
-    // main sequence with a for loop to repeat three sets of characters
-    for (int i = 0; i < number; i++)
+    while (height > 8 || height < 1);
+    int num = height - 1;
+    for (int i = 1; i <= height; i++)
     {
-        repeat(" ", (number - i - 1));
-        repeat("#", (i+1));
+        repeat_char(" ", num);
+        repeat_char("#", i);
         printf("  ");
-        repeat("#", (i+1));
+        repeat_char("#", i);
         printf("\n");
+        num--;
     }
 }
 
-// function to repeat a set of character(s) n times
-void repeat(string c, int n)
+void repeat_char (string character, int times)
 {
-    for(int i = 0; i < n; i++)
+    for (int i = 0; i < times; i++)
     {
-        printf("%s", c);
+        printf("%s", character);
     }
 }
