@@ -15,9 +15,15 @@ int main(int argc, string argv[])
                 return 1;
             }
         }
-    }            
+    }       
+    
+    if (argc != 2)
+    {
+        printf("Usage-- ./substitution key\n");
+        return 1;
+    }
 
-    if (argc == 2 && strlen(argv[1]) == 26)
+    else if (strlen(argv[1]) == 26)
     {
         for (int i = 0; i < strlen(argv[1]); i++)
         {
@@ -47,11 +53,10 @@ int main(int argc, string argv[])
         printf("ciphertext: %s\n", text);
         return 0;
     }
+    
     else
     {
         printf("Usage-- ./substitution key\n");
         return 1;
     }
-
-
 }
