@@ -5,6 +5,17 @@
 
 int main(int argc, string argv[])
 {
+    for (int i = 0; i < strlen(argv[1]); i++) 
+    {
+        for (int j = i + 1; j < strlen(argv[1]); j++) 
+        {
+            if (argv[1][i] == argv[1][j]) 
+            {   
+                printf("There are duplicate characters in key\n");
+                return 1;
+            }
+        }
+    }            
 
     if (argc == 2 && strlen(argv[1]) == 26)
     {
@@ -18,7 +29,7 @@ int main(int argc, string argv[])
             }
         }
         
-        string text = get_string ("plaintext: ");
+        string text = get_string("plaintext: ");
         
         for (int i = 0; i < strlen(text); i++)
         {
@@ -34,10 +45,12 @@ int main(int argc, string argv[])
             }
         }
         printf("ciphertext: %s\n", text);
+        return 0;
     }
     else
     {
         printf("Usage-- ./substitution key\n");
+        return 1;
     }
 
 
