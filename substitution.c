@@ -1,48 +1,44 @@
-#include <stdio.h>
 #include <cs50.h>
+#include <stdio.h>
 #include <ctype.h>
 #include <string.h>
 
 int main(int argc, string argv[])
 {
-    string key = argv[1];
-    
-    // checking input
-    if (argc == 2 && strlen(key) == 26)
+
+    if (argc == 2 && strlen(argv[1]) == 26)
     {
-        string input = get_string("plaintext: ");
-        printf("ciphertext: ");
-        // looping through each character
-        for (int i = 0; i < strlen(input); i++)
+        for (int i = 0; i < strlen(argv[1]); i++)
         {
-            // code for uppercase
-            if (isupper(input[i]))
+            if (!isalpha(argv[1][i]))
             {
-                int ascii = (int)input[i];
-                int keyas = ascii - 65;
-                char letter = key[keyas];
-                printf("%c", toupper(letter));
-            }
-            // code for lowercase
-            else if (islower(input[i]))
-            {
-                int ascii = (int)input[i];
-                int keyas = ascii - 97;
-                char letter = key[keyas];
-                printf("%c", tolower(letter));
-            }
-            // code if space, comma and all 
-            else
-            {
-                printf("%c", input[i]);
+                printf("Key must contain 26 characters\n");
+                return 1;
+            
             }
         }
+        
+        string text = get_string ("plaintext: ");
+        
+        for (int i = 0; i < strlen(text); i++)
+        {
+            if (isupper(text[i]))
+            {
+                int number = (int) text[i] - 'A';
+                text[i] = toupper(argv[1][number]);
+            }
+            else if (islower(text[i]))
+            {
+                int numb = (int) text[i] - 'a';
+                text[i] = tolower(argv[1][numb]);
+            }
+        }
+        printf("ciphertext: %s\n", text);
     }
-    // wrong user input
     else
     {
-        printf("Usage: ./substitution key\n"); 
-        return (1);
+        printf("Usage-- ./substitution key\n");
     }
-    printf("\n");
+
+
 }
