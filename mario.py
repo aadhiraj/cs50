@@ -8,7 +8,7 @@ while True:
 
 # looping through height, printing spaces and hashes
 for i in range(n):
-    print(" " * (n - i -1), end = "")
-    print("#" * (i + 1), end = "")
-    print("  ", end = "")
-    print("#" * (i + 1))
+    print (" " * (n - i -1), end = "")
+    print ("#" * (i + 1), end = "")
+    print ("  ", end = "")
+    print ("#" * (i + 1))
